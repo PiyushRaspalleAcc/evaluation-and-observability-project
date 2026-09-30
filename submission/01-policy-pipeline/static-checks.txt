@@ -1,0 +1,6 @@
+mypy command: .venv/bin/mypy policy_extractor tests
+NOT AVAILABLE: mypy is not installed in the offline sandbox.
+ruff command: .venv/bin/ruff check policy_extractor tests
+NOT AVAILABLE: ruff is not installed in the offline sandbox.
+supplemental syntax check: python -m compileall -q policy_extractor tests
+compileall: PASS

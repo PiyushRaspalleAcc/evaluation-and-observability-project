@@ -1,0 +1,4 @@
+unperturbed consistent= True discrepancies= []
+perturbed stated_total= 9742.17
+perturbed consistent= False
+perturbed discrepancies= [{'field': 'total_monthly_income', 'calculated': 9642.17, 'stated': 9742.17, 'delta': -100.0}]

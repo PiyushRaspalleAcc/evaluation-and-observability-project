@@ -1,0 +1,4 @@
+RetryFutileEscalation
+field= endorsements
+detected_pattern= endorsements_absent
+api_calls= 1

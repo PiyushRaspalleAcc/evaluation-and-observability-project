@@ -1,0 +1,17 @@
+Environment
+===========
+OS: Linux x86_64 (kernel 6.18.44)
+Python: 3.13.5
+Run date: 2026-09-29
+
+Virtual environments
+--------------------
+A separate .venv was created in each final-exercise solution directory.
+Because this execution sandbox has no outbound package-index access, the project packages were installed locally with dependencies disabled, and the offline replay runs used the packages already present in the execution image plus a temporary SDK compatibility layer outside the submission folder.
+
+Important limitations
+---------------------
+1. ANTHROPIC_API_KEY was not set, so the live policy `pipeline` command could not be executed. The documented policy fallback (`tests/test_us04_routing.py`) was captured instead, and a fresh routing artifact was generated directly through the project's routing functions.
+2. `mypy` and `ruff` are not installed in the offline execution image and could not be downloaded. The static-check captures therefore report their unavailability and include a supplemental `compileall` syntax check that passed for all three systems.
+3. The supply-chain offline run normally uses Chroma + sentence-transformers. Those packages were not installed in the sandbox; a temporary, submission-external compatibility layer was used only to execute the bundled offline corpus and its tests. No project source files were changed for that workaround.
+4. No content was copied from the separate student-reference ZIP into the evidence, reflection, or perturbation text. The artifacts here were generated from fresh runs and independently written explanations.

@@ -1,0 +1,59 @@
+[
+  {
+    "confidence_summary": {
+      "coverage_limit": 0.97,
+      "deductible": 0.97,
+      "endorsements": 0.97,
+      "exclusions": 0.97,
+      "policy_type": 0.97,
+      "premium_amount": 0.97
+    },
+    "decision": "spot_check",
+    "fields_below_threshold": [],
+    "integration_failures": [],
+    "policy_id": "RUN-AUTO-01",
+    "policy_type": "auto",
+    "reason": "stratified drift-detection sample",
+    "reviewer_disagreements": []
+  },
+  {
+    "confidence_summary": {
+      "coverage_limit": 0.96,
+      "deductible": 0.95,
+      "endorsements": 0.94,
+      "exclusions": 0.95,
+      "policy_type": 0.96,
+      "premium_amount": 0.71
+    },
+    "decision": "human_review",
+    "fields_below_threshold": [
+      "premium_amount"
+    ],
+    "integration_failures": [],
+    "policy_id": "RUN-HOME-02",
+    "policy_type": "home",
+    "reason": "fields_below_threshold=['premium_amount']",
+    "reviewer_disagreements": []
+  },
+  {
+    "confidence_summary": {
+      "coverage_limit": 0.98,
+      "deductible": 0.98,
+      "endorsements": 0.98,
+      "exclusions": 0.98,
+      "policy_type": 0.98,
+      "premium_amount": 0.98
+    },
+    "decision": "human_review",
+    "fields_below_threshold": [],
+    "integration_failures": [
+      "premium_matches_components_sum"
+    ],
+    "policy_id": "RUN-UMB-03",
+    "policy_type": "umbrella",
+    "reason": "reviewer_disagreement=['premium_amount']; integration_failure=['premium_matches_components_sum']",
+    "reviewer_disagreements": [
+      "premium_amount"
+    ]
+  }
+]
