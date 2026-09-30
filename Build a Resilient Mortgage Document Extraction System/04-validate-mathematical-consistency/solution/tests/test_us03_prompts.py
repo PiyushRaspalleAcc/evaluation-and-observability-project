@@ -78,6 +78,7 @@ def test_ac_03_04_informal_sqft_normalized_to_integer() -> None:
     pipeline = Pipeline(client=RecordingClient(mode="auto"))
     result = pipeline.run(document)
 
+    assert result.property is not None
     assert isinstance(result.property.gross_living_area_sqft, int)
     assert result.property.gross_living_area_sqft == 2400
 

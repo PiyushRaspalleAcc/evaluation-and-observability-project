@@ -1,0 +1,13 @@
+Static analysis checks for the Supply Chain Risk with Multi-Source Synthesis
+
+Command:
+mypy supply_chain_risk tests
+
+Output:
+Success: no issues found in 14 source files
+
+Command:
+ruff check supply_chain_risk tests
+
+Output:
+All checks passed!

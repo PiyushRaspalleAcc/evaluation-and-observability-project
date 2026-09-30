@@ -1,21 +1,11 @@
-.DS_Store
-.vscode
-
-# Python
-.venv/
+﻿.venv/
+**/.venv/
 __pycache__/
-*.py[cod]
-*.egg-info/
-build/
-dist/
-
-# Tooling caches
-.pytest_cache/
+**/__pycache__/
 .mypy_cache/
-.ruff_cache/
-
-# Environment
+**/.mypy_cache/
+.pytest_cache/
+**/.pytest_cache/
+*.pyc
 .env
-.env.*
-!.env.example
-.env
+**/.env

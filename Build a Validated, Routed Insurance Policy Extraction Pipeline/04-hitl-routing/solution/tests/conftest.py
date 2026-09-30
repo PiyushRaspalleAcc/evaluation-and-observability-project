@@ -9,7 +9,7 @@ import json
 import os
 from collections.abc import Iterable
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import pytest
 from anthropic.types import Message, TextBlock, ToolUseBlock, Usage
@@ -37,8 +37,10 @@ _load_env_file()
 
 @pytest.fixture(scope="session")
 def policies_manifest() -> list[dict[str, Any]]:
-    return json.loads((POLICIES_DIR / "MANIFEST.json").read_text())
-
+    return cast(
+        list[dict[str, Any]],
+        json.loads((POLICIES_DIR / "MANIFEST.json").read_text()),
+    )
 
 def load_policy_text(policy_id: str) -> str:
     return (POLICIES_DIR / f"{policy_id}.txt").read_text()
@@ -47,8 +49,10 @@ def load_policy_text(policy_id: str) -> str:
 def load_cassette(name: str) -> list[dict[str, Any]]:
     """Load a recorded API response sequence."""
     path = CASSETTES_DIR / f"{name}.json"
-    return json.loads(path.read_text())
-
+    return cast(
+        list[dict[str, Any]],
+        json.loads(path.read_text()),
+    )
 
 def make_tool_use_message(
     tool_name: str,

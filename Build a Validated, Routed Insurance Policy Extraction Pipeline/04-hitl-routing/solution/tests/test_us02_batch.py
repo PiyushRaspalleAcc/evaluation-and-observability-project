@@ -14,6 +14,7 @@ Items carry the standard retry semantics: format/consistency retries on follow-u
 from __future__ import annotations
 
 import os
+from typing import Any
 
 import pytest
 
@@ -308,7 +309,7 @@ def _ok_extraction_input(policy_id: str) -> dict[str, object]:
     }
 
 
-def _text_of(message: dict[str, object]) -> str:
+def _text_of(message: dict[str, Any]) -> str:
     """Flatten a single message into a string for substring assertions."""
     content = message.get("content")
     if isinstance(content, str):
@@ -337,9 +338,9 @@ class FakeBatchClient:
         self._succeed = succeed
         self._errored = errored
         self._expired = expired
-        self.create_calls: list[list[dict[str, object]]] = []
+        self.create_calls: list[list[dict[str, Any]]] = []
 
-    def submit(self, requests: list[dict[str, object]]) -> str:
+    def submit(self, requests: list[dict[str, Any]]) -> str:
         self.create_calls.append(requests)
         return f"batch_{len(self.create_calls)}"
 
@@ -380,9 +381,9 @@ class SequencedBatchClient:
     def __init__(self, rounds: list[dict[str, object]]) -> None:
         self._rounds = rounds
         self._round_index = 0
-        self.create_calls: list[list[dict[str, object]]] = []
+        self.create_calls: list[list[dict[str, Any]]] = []
 
-    def submit(self, requests: list[dict[str, object]]) -> str:
+    def submit(self, requests: list[dict[str, Any]]) -> str:
         self.create_calls.append(requests)
         return f"batch_{len(self.create_calls)}"
 

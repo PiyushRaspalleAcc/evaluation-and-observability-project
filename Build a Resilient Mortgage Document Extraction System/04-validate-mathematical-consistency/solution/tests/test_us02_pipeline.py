@@ -70,6 +70,8 @@ def test_ac_02_03_extract_returns_typed_mortgage_extraction() -> None:
     result = pipeline.extract(LOAN_APP_TEXT, DocumentType.LOAN_APPLICATION)
 
     assert isinstance(result, MortgageExtraction)
+    assert result.borrower is not None
+    assert result.loan is not None
     assert isinstance(result.borrower.full_name, str)
     assert result.borrower.full_name
     assert isinstance(result.loan.amount, float)
